@@ -1,10 +1,25 @@
 [package]
-name = "spawn-multisig"
+name = "multisig-wallet"
 version = "0.1.0"
 edition = "2021"
+authors = ["nzengi <zenginureddin1@gmail.com>"]
+description = "A Rust-based multi-signature wallet implementation for Ethereum, using secp256k1 and ethers-rs."
+license = "MIT"
+repository = "https://github.com/nzengi/spawn-multisig"
+homepage = "https://github.com/nzengi/spawn-m"
+readme = "README.md"
+keywords = ["multisig", "ethereum", "wallet", "smart contracts", "crypto"]
+categories = ["cryptography", "network-programming"]
 
 [dependencies]
-rand = "0.8"             # Rastgele anahtar üretimi için
-secp256k1 = "0.22"       # ECDSA ve Schnorr imzaları için kriptografi kütüphanesi
-serde = { version = "1.0", features = ["derive"] }  # Seri hale getirme işlemleri için
-serde_json = "1.0"       # JSON desteği
+secp256k1 = "0.21"
+ethers = "2.0"
+log = "0.4"
+thiserror = "1.0"
+tokio = { version = "1", features = ["full"] }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "full"] }
+
+[features]
+default = []
